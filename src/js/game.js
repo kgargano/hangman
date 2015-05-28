@@ -1,5 +1,7 @@
 function create(){
-        return {};
+        return {
+            secret: null
+        };
 }
 
 module.exports = {
