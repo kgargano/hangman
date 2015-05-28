@@ -8,7 +8,9 @@
     "gulp-react": "^3.0.1",
     "react": "^0.13.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "should": "^6.0.3"
+  },
   "scripts": {
     "test": "jest"
   },
