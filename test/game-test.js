@@ -48,7 +48,7 @@ describe('Game', function(){
     describe("When the game is started and a secret is set", function(){
         var secret = "hello world";
 
-        before(function(){
+        beforeEach(function(){
             game = new Game();
             game.start();
             game.setSecret(secret);
@@ -56,14 +56,20 @@ describe('Game', function(){
 
         it('should accept a letter guess', function(){
             var guess = "A";
+            game.guess.bind(game, guess).should.not.throw();
+        });
+
+        it('should verfiy a letter is guessed', function(){
+            var guess = "A";
             game.guess(guess);
             game.hasBeenGuessed(guess).should.be.true;
         });
 
+
         it('should reject a previously guessed letter', function(){
             var guess = "A";
             game.guess(guess);
-            game.guess.bind(null, guess).should.throw();
+            game.guess.bind(game, guess).should.throw();
         });
 
         it('should indicate if a letter guess is valid for the secret', function(){
@@ -72,7 +78,7 @@ describe('Game', function(){
         });
 
         it('should reject a non-alpha character', function(){
-            game.guess.bind(null, "3").should.throw();
+            game.guess.bind(game, "3").should.throw();
         });
 
         it('should treat letters as case insensitive', function(){
