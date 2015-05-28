@@ -1,4 +1,4 @@
 React.render(
-React.createElement("h1", null, "Hello, world!"),
+<h1>Welcome To Reactive Hangman</h1>,
     document.getElementById('example')
 );
