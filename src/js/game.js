@@ -5,9 +5,11 @@ var Game = function(){
     this.isActive = false;
 };
 
+/*
 Game.prototype.start = function(){
-    this.isActive = true;
+    this.isActive = false;
 };
+*/
 
 module.exports = {
     Game: Game
